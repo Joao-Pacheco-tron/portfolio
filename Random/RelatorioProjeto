@@ -1,0 +1,13 @@
+[30-04-2024 22:30-22:45]
+Hoje iniciei meu projeto tentando montar uma janela com rolagem de dados D6. 2D6 e D20.
+Utilizando tkinter para mostrar o projeto e printando caracteres dos dados de forma randomica com um
+botão de print.
+
+Até o momento tentei reutilizar o código de 2D6 que encontrei para realizar o mesmo em forma de D6,
+falta encontrar um meio das impressões não colidirem e terem suas próprias posições, a questão do D20
+vou pesquisar se há caracteres disponíveis, caso contrario terei de montar imagens e partir para montar
+algo similar com a biblioteca random.
+
+Outra rota a se seguir seria também a criação de telas individuais para cada um dos dados, isso provávelmente
+eliminaria o problema da colisão de posição dos textos, porém, nem ideia de como fazer isso.
+[30-04-2024 22:30-22:45] 

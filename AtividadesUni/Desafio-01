@@ -1,0 +1,89 @@
+"""
+Desafio-01 (HASH):
+
+https://drive.google.com/file/d/1K8UuJSCb_jQA9g8MoU91ZdfKT4zjEgQb/view
+
+Deadline (15-04-24)
+
+Objetivo (Criar uma base de dados de senhas ou números e realizar pesquisas na mesma)
+
+dificuldades:
+    N1 {Python Nativo c/ colisão}
+    N2 {Lista Criada c/ colisão}
+    N3 {Lista Encadeada c/ colisão}
+    
+Regras:
+    Base de dados {armazenar>999}
+    Pesquisa {Buscar por campo chave}
+    Resultado {Mostrar tempo médio de busca, com e sem hash}
+"""
+import time
+
+class Tabela_Hash:
+    def __init__(self, tamanho):
+        self.tamanho = tamanho
+        self.tabela = [None] * tamanho
+
+    def hash(self, chave):
+        return (chave % 31) + 1
+
+    def inserir(self, chave, senha):
+        indice = self.hash(chave)
+        while self.tabela[indice] is not None:
+            indice = (indice +  1) % self.tamanho
+        self.tabela[indice] = (chave, senha)
+
+    def buscar(self, chave):
+        inicio = time.time()  # Marca o tempo inicial
+        indice = self.hash(chave)
+        while self.tabela[indice] is not None:
+            if self.tabela[indice][0] == chave:
+                fim = time.time()  # Marca o tempo final
+                return fim - inicio  # Retorna o tempo total de busca
+            indice = (indice + 1) % self.tamanho
+        fim = time.time()  # Marca o tempo final
+        return fim - inicio  # Retorna o tempo total de busca
+
+def adicionar_senha():
+    chave = int(input("Digite uma chave: "))
+    senha = input("Digite uma senha: ")
+    tabela.inserir(chave, senha)
+
+def verificar_senha():
+    tempo_busca = tabela.buscar(int(input("Digite a chave: ")))
+    senha = input("Digite a senha: ")
+    if senha == senha_tabela:
+        print("Senha válida!")
+    else:
+        print("Senha inválida!")
+    return tempo_busca
+
+tamanho_tabela = 1000
+tabela = Tabela_Hash(tamanho_tabela)
+
+# Adiciona senhas à tabela
+adicionar_senha()
+#adicionar_senha()
+
+tempos_busca_hash = []
+tempos_busca_sem_hash = []
+
+# Realiza várias buscas e mede o tempo médio de busca com e sem hash
+for _ in range(1000):  # Realiza 1000 buscas
+    chave = int(input("Digite a chave para buscar: "))
+    senha_tabela = tabela.buscar(chave)
+    tempo_busca = verificar_senha()
+    tempos_busca_hash.append(tempo_busca)
+
+    # Simula uma busca sem hash para fins de comparação
+    inicio = time.time()
+    senha = input("Digite a senha para buscar: ")
+    fim = time.time()
+    tempos_busca_sem_hash.append(fim - inicio)
+
+# Calcula o tempo médio de busca com e sem hash
+tempo_medio_hash = sum(tempos_busca_hash) / len(tempos_busca_hash)
+tempo_medio_sem_hash = sum(tempos_busca_sem_hash) / len(tempos_busca_sem_hash)
+
+print("Tempo médio de busca com hash:", tempo_medio_hash)
+print("Tempo médio de busca sem hash:", tempo_medio_sem_hash)

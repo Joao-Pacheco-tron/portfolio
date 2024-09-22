@@ -1,0 +1,95 @@
+header {
+    background-color: #00cc4e;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    color:aliceblue
+}
+
+h1 {
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+    color:rgb(20, 20, 20);
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+    padding: 0.9%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+Nav li a:hover {
+    color: white;
+}
+
+.paragrafoVerde {
+    text-justify: auto;
+    color: #00cc4e;
+    line-height: 1.2em;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.listaColorida {
+    color: rgb(255, 255, 255);
+}
+
+/*Afeta direto o elemento descrito */
+Nav li a {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+Nav li {
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+Nav ul {
+    float: right;
+    list-style: none;
+}
+
+nav {
+    font-size: 16px;
+    letter-spacing: 2px;
+    height: 0px;
+    padding-right: 20px;
+}
+
+table {
+    width: 30%;
+    height: auto;
+}
+
+table td {
+    color: #141414;
+    background-color: #00cc4e;
+}
+
+ Seleção de linhas detro de uma tabela
+table tr:nth-child(even){
+    background-color: #008332;
+}
+
+
+table thead th{
+    background-color: #ffbb00;
+}
+
+seleciona id com
+#id
+
+#TextosEImagens .figuras.figure {
+    display:inline-block;
+}
+
+#TextosEImagens .figuras, #TextosEImagens .videos{
+    text-align: center;
+}
+

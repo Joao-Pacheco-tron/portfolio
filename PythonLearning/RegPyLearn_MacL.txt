@@ -1,0 +1,72 @@
+[05/06/2024] Básico
+    Frame Works: PyTorch || Scikit Learn || TenserFlow
+    Biblioteca de Interface para TenserFlow e PyTorch: Keras
+
+    Scikit Learn -> Machine Learning tradicional
+    PyTorch/TenserFlow -> Deep Learning
+
+    Coscientizando sobre o que é Machine Learning 
+
+    Planejamento do aprender, 12 Projetos. Acesso<https://www.youtube.com/watch?v=8ext9G7xspg&t=100s>
+[06/06/2024] Básico	
+    12 Projetos para iniciantes:
+    1- MadLibs 
+        Função dentro de função, Ex
+        youtuber = "Lel"
+        Pessoa1 = input("Quem?")
+        Obj1 = input("No que?")
+        Result1 = input("Como?")
+        madlib = (f"O {Pessoa1}, estava muito distraido, acabou tropeçando em {Obj1} e acabou {Result1}")
+        print(madlib)
+    2- Advinhe o Número (Comp)
+        Fazer o computador pensar em um número e tentar Advinhar
+        import random
+
+        def guess(x):
+            random_number = random.randint(1, x)
+            guess = 0
+            while guess != random_number:
+                guess = int(input(f"Advinha o número entre 1 e {x} "))
+                print(guess)
+                if guess < random_number:
+                    print("Muito baixo, tenta dnv ")
+                elif guess > random_number:
+                    print("Se chutar mais alto é de bicicleta")
+            print(f"Não é que chutou certo, o número era:{random_number}\nAgora foi fim de jogo")
+                
+        guess(5)
+    3 -Advinhe o número (User)
+        def computer_guess(x):
+            low = 1
+            high = x
+            feedback = ""
+            while feedback != "c" and low != high:
+                if low != high:
+                    guess = random.randint(low, high)
+                else:
+                    guess = low
+                guess = random.randint(low, high)
+                feedback = input(f"Se {guess} é o número que pensou, responda: muito alto(A), muito baixo(B) ou na mosca(C)?").lower()
+                if feedback == "A":
+                    high = guess -1
+                if feedback == "B":
+                    low = guess + 1
+            print(f"Computador mizeravi Acertou teu número, {guess} era o número que tu tinha pensado msm!") 
+            
+        computer_guess(500)
+[11/06/2024] Básico: Busca por dados
+    Foi adicionado a lista de playlist projetos e vídeos em py sobre diversos temas;
+    Pesquisado vídeos sobre o básico de machine Learning (Olha no gpt a lista de vídeos)
+[12/06/2024] Biblioteca Pandas
+    import pandas as pd
+
+    # dataframe = pd.dataframe()
+    venda = {"data": ["15/02/2024","16/02/2024"],
+            "Valor":[500, 300],
+            "Produto":["feijão","arroz"],
+            "qtde":[50,70],
+            }
+    vendas_df = pd.DataFrame(venda)
+
+    print(vendas_df)
+[17/06/2024]

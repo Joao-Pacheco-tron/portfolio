@@ -1,0 +1,5 @@
+Abrir Server Online -> Alt + L + O
+
+JS
+comando para executar arqivo:
+npm install readline-sync --save
